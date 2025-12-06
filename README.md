@@ -1,6 +1,8 @@
 # Apogee: Virtual Crypto Trading Platform
 
-A web-based trading simulator that allows users to buy and sell cryptocurrencies in real-time using play money. The application queries live market data from the Binance API and manages user portfolios using a relational database.
+A web-based trading simulator that allows users to buy and sell cryptocurrencies in real-time using play money. The application queries live market data from the Binance API and manages user portfolios using a relational database. This project is hosted on PythonAnywhere.
+
+Try it out here: https://sairupeshl.pythonanywhere.com/
 
 ## 🚀 Features
 * **Real-time Quotes:** Fetches live prices for ETH, BTC, and other crypto assets via Binance.
@@ -41,3 +43,6 @@ A web-based trading simulator that allows users to buy and sell cryptocurrencies
     ```bash
     flask run
     ```
+## Acknowledgements
+
+This project was inspired by **Finance** from Problem Set 9 of CS50x: Introduction to Computer Science course (Harvard University).
