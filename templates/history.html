@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <div class="container mt-4"> <table class="table table-bordered table-striped">
+            <thead class="table-dark"> <tr>
+                    <th class="text-start">Symbol</th>
+                    <th class="text-end">Units</th>
+                    <th class="text-end">Price (1 unit) (USD)</th>
+                    <th class="text-center">Type</th>
+                    <th class="text-end">Transaction Time (UTC)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in rows %}
+                    <tr>
+                        <td class="text-start">{{ row.symbol }}</td>
+                        <td class="text-end">{{ row.shares }}</td>
+                        <td class="text-end">{{ row.price | usd }}</td>
+                        <td class="text-center">
+                            {% if row.type == 'sell' %}
+                                <span>SELL</span>
+                            {% else %}
+                                <span>BUY</span>
+                            {% endif %}
+                        </td>
+                        <td class="text-end">{{ row.timestamp }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

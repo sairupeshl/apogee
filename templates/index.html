@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block main %}
+    <div class="text-end mb-3">
+        <form action="/reset" method="post" onsubmit="return confirm('Are you sure? This will reset your portfolio.');">
+            <button type="submit" class="btn btn-warning btn-sm">
+                Reset Portfolio
+            </button>
+        </form>
+    </div>
+    <div class="container">
+        <table class="table table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th class="text-start">Symbol</th>
+                    <th class="text-end">Units</th>
+                    <th class="text-end">Current Price</th>
+                    <th class="text-end">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in records %}
+                    <tr>
+                        <td class="text-start fw-bold">{{ row.symbol }}</td>
+                        <td class="text-end">{{ row.shares }}</td>
+                        <td class="text-end">{{ row.price }}</td>
+                        <td class="text-end">{{ row.total }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot class="table-light">
+                <tr>
+                    <td colspan="3" class="text-end fw-bold">Cash</td>
+                    <td class="text-end">{{ cash }}</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="text-end fw-bold">Grand Total</td>
+                    <td class="text-end fw-bold">{{ grand_total }}</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+{% endblock %}

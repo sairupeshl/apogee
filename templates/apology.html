@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Apology
+{% endblock %}
+
+{% block main %}
+    <div class="text-center mt-5">
+        <img alt="Error" class="img-fluid rounded mb-3" src="https://media.giphy.com/media/U5DNSiHo21pvuJEXye/giphy.gif" style="max-width: 600px;">
+
+        <h2 class="text">Error {{ top }}</h2>
+        <p class="lead text">{{ bottom }}</p>
+            
+        <a href="/" class="btn btn-secondary mt-3">Back to Dashboard</a>
+    </div>
+{% endblock %}
