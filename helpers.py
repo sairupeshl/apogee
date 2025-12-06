@@ -28,7 +28,7 @@ def lookup(symbol):
     """Look up quote for symbol using Binance API."""
 
     symbol = symbol.upper().strip()
-    url = f"https://api.binance.com/api/v3/ticker/price?symbol={symbol}USDT"
+    url = f"https://api.binance.us/api/v3/ticker/price?symbol={symbol}USDT"
     
     try:
         response = requests.get(url)
